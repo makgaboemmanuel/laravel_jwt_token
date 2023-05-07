@@ -161,6 +161,9 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        # user added line
+        Laravel\Sanctum\SanctumServiceProvider::class,
+        Laravel\Sanctum\SanctumServiceProvider::class,
 
         /*
          * Package Service Providers...

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Symfony\Component\HttpFoundation\Response;
 
 class AuthController extends Controller
 {
@@ -32,14 +34,25 @@ class AuthController extends Controller
     public function getAllUsersWeb(Request $request){
         $allUsers =  json_decode(User::all()); /* please, always use json_decode when reading class variables */
 
-
-
         foreach( $allUsers as $key => $value ){
                 echo "<pre>";
                 echo "\n" . $value->id . ", " . $value->name . ", " . $value->created_at . "\n";
                 echo "</pre>";
         }
 
+    }
+
+    public function login(Request $request){
+        if(!Auth::attempt( $request->only('email', 'password' )) ){
+            return response(
+                [
+                    'message' => 'Invalid Credentials'
+                ], Response::HTTP_UNAUTHORIZED
+            );
+        }else{
+            $user = Auth::user();
+            return $user;
+        }
     }
 
 }

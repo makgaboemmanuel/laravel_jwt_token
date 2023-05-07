@@ -25,5 +25,21 @@
     }
 
 
+    {
+    "name" : "Makgabo Emmanuel Mathekga",
+    "email" : "saintsopts@gmail.com",
+    "password" : "santa_melta##"
+}
+
+ # composer require laravel sanctum
+ # composer require laravel/sanctum
+
+ # php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+# specify which file to migrate - thanks
+# ran migration successfully with the commands below
+# php artisan migrate --path=/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php
+
+
 */
 

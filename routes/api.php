@@ -28,6 +28,8 @@ Route::post('/register' ,[AuthController::class, 'register']);
 
 Route::get('/getAllUsers', [AuthController::class, 'getAllUsers']);
 
+Route::post('/login', [AuthController::class, 'login']);
+
 
 
 
