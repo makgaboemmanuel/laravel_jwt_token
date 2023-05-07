@@ -11,8 +11,18 @@
 # please create collections on Postman Software. on each collection, please make sure that change the request type
 # to the relevant operation
 
-# please run the command: composer require laravel/passport
+# please run the command:
+# composer require paragonie/random_compat:2.*
+
+# removed line from composer file : "guzzlehttp/guzzle": "^7.0.1",
+# run command: composer require guzzlehttp/guzzle "^6.5.0" --with-all-dependencies
+# run command: composer require guzzlehttp/guzzle "^6.5.0" --with-all-dependencies
+# run command: composer require laravel/passport
+# from composer lock: "version": "7.5.1", /* line 698 */
+# run command: composer require laravel/passport:^9.0 --with-all-dependencies
 # then press: Ctrl + S in order to save the request inside Postman
+
+# NB: please always replace the % with | inside the token to get proper authentication
 
 # uses registered so far:
 

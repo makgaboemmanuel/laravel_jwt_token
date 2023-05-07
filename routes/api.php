@@ -22,15 +22,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 /* used added endpoint */
 
-Route::get('/user' ,[AuthController::class, 'user'] );
-
 Route::post('/register' ,[AuthController::class, 'register']);
 
 Route::get('/getAllUsers', [AuthController::class, 'getAllUsers']);
 
 Route::post('/login', [AuthController::class, 'login']);
 
-
+Route::middleware('auth:sanctum')->group( function (){
+    Route::get('/user' ,[AuthController::class, 'user'] );
+});
 
 
 

@@ -23,7 +23,7 @@ class AuthController extends Controller
         return $user;
     }
     public function user(){
-        return 'Authenticated User';
+        return Auth::user();//'Authenticated User';
     }
 
     public function getAllUsers(Request $request){
@@ -51,8 +51,13 @@ class AuthController extends Controller
             );
         }else{
             $user = Auth::user();
-            // $token = $user->createToken('token')->plainTextToken;
-            return $user;
+            $token = $user->createToken('token')->plainTextToken; /* please ignore this warning, it won't break the applications */
+            $cookie = cookie('jwt', $token, 60 * 24); /* 60 * 24 = 1 day  */
+            // return $token;
+            return response([
+                'message' => $token
+            ]
+            )->withCookie($cookie);
         }
     }
 
