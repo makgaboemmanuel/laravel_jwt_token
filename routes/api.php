@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+/* user defined namespaces */
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +19,18 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/* used added endpoint */
+
+Route::get('/user' ,[AuthController::class, 'user'] );
+
+Route::post('/register' ,[AuthController::class, 'register']);
+
+Route::get('/getAllUsers', [AuthController::class, 'getAllUsers']);
+
+
+
+
+
+
+
