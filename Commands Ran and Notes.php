@@ -11,7 +11,8 @@
 # please create collections on Postman Software. on each collection, please make sure that change the request type
 # to the relevant operation
 
-# then press: Ctrl + S in order to save the request
+# please run the command: composer require laravel/passport
+# then press: Ctrl + S in order to save the request inside Postman
 
 # uses registered so far:
 
