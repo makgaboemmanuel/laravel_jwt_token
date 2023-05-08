@@ -4,6 +4,9 @@ namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
+
 class Authenticate extends Middleware
 {
     /**
@@ -29,4 +32,6 @@ class Authenticate extends Middleware
 
         return $next($request);
     }
+
+
 }

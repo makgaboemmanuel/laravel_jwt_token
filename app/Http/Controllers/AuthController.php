@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
 {
@@ -60,5 +61,15 @@ class AuthController extends Controller
             )->withCookie($cookie);
         }
     }
+
+        # the logout function, this is to delete the cookie
+        public function logout(Request $request ){
+            $cookie = Cookie::forget('jwt');
+
+            return response([
+                'message' => 'Success'
+            ])->withCookie($cookie);
+        }
+
 
 }
