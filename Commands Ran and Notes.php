@@ -54,3 +54,6 @@
 
 */
 
+# adding versioning to the API:
+
+# php artisan make:controller API/v1/AuthController
